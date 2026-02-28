@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>💕</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    overflow:hidden;
+}
+
+/* ===================== */
+/* ESTILO GENERAL PÁGINAS */
+/* ===================== */
+
+.page{
+    position:absolute;
+    width:100%;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    transition: transform 0.8s ease-in-out;
+}
+
+/* ===================== */
+/* PÁGINA 1 */
+/* ===================== */
+
+#page1{
+    background:#111; /* Fondo oscuro detrás */
+}
+
+/* Contenedor de imagen centrada */
+.image-wrapper{
+    position:relative;
+    width:100%;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* Imagen completa sin recortes */
+.image-wrapper img{
+    max-height:100vh;
+    max-width:100vw;
+    object-fit:contain;
+}
+
+/* Overlay encima */
+.overlay{
+    position:absolute;
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.content{
+    background:rgba(0,0,0,0.6);
+    padding:30px;
+    border-radius:20px;
+    max-width:450px;
+    width:100%;
+    text-align:center;
+    color:white;
+    backdrop-filter: blur(6px);
+}
+
+h1{
+    margin-bottom:15px;
+}
+
+p{
+    margin-bottom:10px;
+    line-height:1.4;
+}
+
+button{
+    margin-top:20px;
+    padding:12px 25px;
+    border:none;
+    border-radius:30px;
+    background:#ff4d6d;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#ff1e4d;
+    transform:scale(1.05);
+}
+
+/* ===================== */
+/* PÁGINA 2 */
+/* ===================== */
+
+#page2{
+    background:#ffd6dc;
+    transform:translateX(100%);
+}
+
+.page2-container{
+    width:100%;
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+    gap:25px;
+}
+
+/* Imagen arriba */
+.image-top img{
+    width:100%;
+    max-width:400px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* Mensaje abajo */
+.page2-container .content{
+    background:rgba(0,0,0,0.65);
+    padding:25px;
+    border-radius:20px;
+    text-align:center;
+    color:white;
+    max-width:400px;
+    width:100%;
+}
+
+/* ===================== */
+/* ANIMACIÓN CAMBIO */
+/* ===================== */
+
+.show-second #page1{
+    transform:translateX(-100%);
+}
+
+.show-second #page2{
+    transform:translateX(0%);
+}
+
+/* ===================== */
+/* RESPONSIVE */
+/* ===================== */
+
+@media(max-width:600px){
+    h1{
+        font-size:22px;
+    }
+
+    .content{
+        padding:20px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ===================== -->
+<!-- PÁGINA 1 -->
+<!-- ===================== -->
+
+<div id="page1" class="page">
+
+    <div class="image-wrapper">
+        <img src="1d73ae9924a0bf148ece5730504820b6.jpg" alt="Invitación">
+
+        <div class="overlay">
+            <div class="content">
+                <h1 contenteditable="true">Bu❤️</h1>
+                <p contenteditable="true">
+                    Quiero robarte un fin de semana solo para nosotros...
+                    Un lugar para dos, para reír, hablar, dormir abrazados, no preocuparnos por nada y ganarte en algún jueguito.
+                </p>
+                <p contenteditable="true">
+                    Fecha: 14/03/2026 <br>
+                    Paso por ti a las 10:00 a.m.
+                </p>
+                <button onclick="nextPage()">Ver sorpresa ✨</button>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ===================== -->
+<!-- PÁGINA 2 -->
+<!-- ===================== -->
+
+<div id="page2" class="page">
+    <div class="page2-container">
+
+        <div class="image-top">
+            <img src="foto.png" alt="Nuestra foto">
+        </div>
+
+        <div class="content">
+            <h1 contenteditable="true">Tenemos una cita 💕</h1>
+            <p contenteditable="true">14 de marzo - 10:00 am</p>
+            <p contenteditable="true">Río Místico (Pista 🐝)</p>
+            <button onclick="prevPage()">Volver 💖</button>
+        </div>
+
+    </div>
+</div>
+
+<script>
+
+function nextPage(){
+    document.body.classList.add("show-second");
+}
+
+function prevPage(){
+    document.body.classList.remove("show-second");
+}
+
+</script>
+
+</body>
+</html>
